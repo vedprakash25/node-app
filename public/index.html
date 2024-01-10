@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>Document</title>
+  </head>
+  <style>
+    .d {
+      border: 2px solid red;
+    }
+  </style>
+  <body class="max-w-screen-xl w-10/12 mx-auto pb-10">
+    <h1 class="text-6xl text-center py-10 font-bold text-violet-500">Blogs</h1>
+
+    <div class="list grid lg:grid-cols-3 sm:grid-cols-2 gap-5"></div>
+
+    <script>
+      function selector(ele) {
+        const selected = document.querySelector(ele);
+        return selected;
+      }
+
+      const data = [
+        {
+          title: "My first blog",
+          description: "This is my first blog post.",
+          date: new Date("October 13, 2021"),
+          thumbnail:
+            "https://buyerr.in/static/media/full_stack_dev.38ca190db3c676ddf17053e2c80c2652.svg",
+        },
+        {
+          title: "My Second blog",
+          description: "This is my first blog post.",
+          date: new Date("October 13, 2021"),
+          thumbnail:
+            "https://buyerr.in/static/media/full_stack_dev.38ca190db3c676ddf17053e2c80c2652.svg",
+        },
+        {
+          title: "My Third blog",
+          description: "This is my first blog post.",
+          date: new Date("October 13, 2021"),
+          thumbnail:
+            "https://buyerr.in/static/media/full_stack_dev.38ca190db3c676ddf17053e2c80c2652.svg",
+        },
+        {
+          title: "My Third blog",
+          description: "This is my first blog post.",
+          date: new Date("October 13, 2021"),
+          thumbnail:
+            "https://buyerr.in/static/media/full_stack_dev.38ca190db3c676ddf17053e2c80c2652.svg",
+        },
+      ];
+
+      const head = selector("h1");
+      const listWrapper = selector(".list");
+
+      data.forEach((item) => {
+        const card = document.createElement("div");
+        card.classList.add("border", "rounded-md", "grid", "p-6");
+        card.innerHTML = `<div class="h-42"> 
+                            <img
+                            class="h-full object-cover"
+                            src="${item.thumbnail}"
+                            alt=""
+                            />
+                            </div>
+                            <div class="flex flex-col gap-2">
+                            <h2 class="text-2xl mt-3">${item.title}</h2>
+                            <h2 class="text-lg opacity-70">
+                            ${item.description}
+                            </h2>
+                                 <button class="inline-flex">Read More</button>
+                            </div>`;
+
+        listWrapper.appendChild(card);
+      });
+    </script>
+  </body>
+</html>

@@ -4,7 +4,8 @@
   "description": "A simple Node.js app hosted on Railway",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "serve": "nodemon index.js"
   },
   "keywords": [
     "node",
@@ -14,6 +15,8 @@
   "author": "Your Name",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "nodemon": "^3.0.2",
+    "path": "^0.12.7"
   }
 }
